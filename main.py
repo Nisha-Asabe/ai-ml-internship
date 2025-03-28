@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from datetime import datetime
 import toml
-secrets = toml.load("C:/Users/ntasa/.streamlit/secrets.toml") 
+secrets = toml.load("C:\Users\ntasa\OneDrive\Pictures\ai ml internship/secrets.toml") 
 api_key = "AIzaSyCJXkvjujZGpi75Grcg2qpAu-iZBN-TzCg"
 
 GOOGLE_PLACES_API_KEY = st.secrets["google"]["api_key"]  # Use a secure key
