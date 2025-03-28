@@ -9,6 +9,14 @@ secrets = toml.load("secrets.toml")
 api_key = "AIzaSyCJXkvjujZGpi75Grcg2qpAu-iZBN-TzCg"
 st.write(st.secrets)
 #GOOGLE_PLACES_API_KEY = st.secrets["google"]["api_key"]  # Use a secure key
+try:
+    GOOGLE_PLACES_API_KEY = st.secrets["google"]["api_key"]
+except KeyError:
+    st.error("API key is missing. Please check your Streamlit secrets.")
+    GOOGLE_PLACES_API_KEY = None  # Prevent further errors
+
+# Debug: Confirm API Key is loaded
+st.write(f"API Key Loaded: {bool(GOOGLE_PLACES_API_KEY)}")
 
 def fetch_travel_suggestions(destination, preferences):
     """Fetch top travel attractions using Google Places API."""
