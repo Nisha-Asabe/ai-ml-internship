@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from datetime import datetime
 import toml
+import os
 secrets = toml.load(os.path.expanduser(r"C:\Users\ntasa\OneDrive\Pictures\ai ml internship/secrets.toml")) 
 api_key = "AIzaSyCJXkvjujZGpi75Grcg2qpAu-iZBN-TzCg"
 
